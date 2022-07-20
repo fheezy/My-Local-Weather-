@@ -13,7 +13,7 @@ label {
 }
 .colOne {
 	background-color: white;
-	/* darkkhaki */
+	
 }
 .colTwo {
 	background-color: rgb(255, 255, 255);
@@ -44,4 +44,3 @@ label {
 .cardTodayDate {
 	font-size: 20px;
 }
-
