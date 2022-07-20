@@ -44,3 +44,6 @@ label {
 .cardTodayDate {
 	font-size: 20px;
 }
+.forecast {
+    background-color:rgb(96, 12, 90);
+}

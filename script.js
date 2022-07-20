@@ -6,7 +6,7 @@ var date = moment().format('dddd, MMMM Do YYYY');
 var dateTime = moment().format('YYYY-MM-DD HH:MM:SS')
 
 var cityHist = [];
-//Will save the text value of the search and save it to an array and storage
+// Is going to save the text value of the search and save it to an array and storage
 $('.search').on("click", function (event) {
 	event.preventDefault();
 	city = $(this).parent('.btnPar').siblings('.textVal').val().trim();
@@ -21,7 +21,7 @@ $('.search').on("click", function (event) {
 	getWeatherToday();
 });
 
-//Will create buttons based on search history 
+//Will create a button form based on search history 
 var contHistEl = $('.cityHist');
 function getHistory() {
 	contHistEl.empty();
@@ -49,9 +49,9 @@ function getHistory() {
 	});
 };
 
-//Grab the main 'Today' card body.
+//Grab the main 'Today' card.
 var cardTodayBody = $('.cardBodyToday')
-//Applies the weather data to the today card and then launches the five day forecast
+//Applies the weather data to the 'today card' then launches the five day forecast
 function getWeatherToday() {
 	var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
 
@@ -74,10 +74,10 @@ function getWeatherToday() {
 		//Humidity
 		var pElHumid = $('<p>').text(`Humidity: ${response.main.humidity} %`);
 		cardTodayBody.append(pElHumid);
-		//Wind Speed
+		//Wind-Speed
 		var pElWind = $('<p>').text(`Wind Speed: ${response.wind.speed} MPH`);
 		cardTodayBody.append(pElWind);
-		//Set the lat and long from the searched city
+		//Set the lng and lat from the searched city
 		var cityLon = response.coord.lon;
 		// console.log(cityLon);
 		var cityLat = response.coord.lat;
@@ -122,7 +122,7 @@ function getFiveDayForecast() {
 	}).then(function (response) {
 		var fiveDayArray = response.list;
 		var myWeather = [];
-		//Made a object that would allow for easier data read
+		//an object that would allow data to be read simplier
 		$.each(fiveDayArray, function (index, value) {
 			testObj = {
 				date: value.dt_txt.split(' ')[0],
@@ -137,7 +137,7 @@ function getFiveDayForecast() {
 				myWeather.push(testObj);
 			}
 		})
-		//Inject the cards to the screen 
+		//Prompt the cards to the screen 
 		for (let i = 0; i < myWeather.length; i++) {
 
 			var divElCard = $('<div>');
@@ -173,7 +173,7 @@ function getFiveDayForecast() {
 	});
 };
 
-//Allows for the example data to load for Denver
+//Allows for the example data to load for Dallas
 function initLoad() {
 
 	var cityHistStore = JSON.parse(localStorage.getItem('city'));
