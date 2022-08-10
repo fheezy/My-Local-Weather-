@@ -1,5 +1,6 @@
-var key = '64f2ee2a8261daa4d9f780f5b365f275';
-var city = "Dallas"
+// var key = '64f2ee2a8261daa4d9f780f5b365f275';
+var key = '4c5676304897b3ff750e089516e645ce';
+var city = "Dallas";
 
 //Grabs the current time and date
 var date = moment().format('dddd, MMMM Do YYYY');
