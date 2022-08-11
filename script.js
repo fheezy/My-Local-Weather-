@@ -4,7 +4,7 @@ var city = "Dallas";
 
 //Grabs the current time and date
 var date = moment().format('dddd, MMMM Do YYYY');
-var dateTime = moment().format('YYYY-MM-DD HH:MM:SS')
+var dateTime = moment().format('YYYY-MM-DD HH:MM:SS');
 
 var cityHist = [];
 // Is going to save the text value of the search and save it to an array and storage
@@ -23,9 +23,9 @@ $('.search').on("click", function (event) {
 });
 
 //Will create a button form based on search history 
-var contHistEl = $('.cityHist');
+var seenHistEl = $('.cityHist');
 function getHistory() {
-	contHistEl.empty();
+	seenHistEl.empty();
 
 	for (let i = 0; i < cityHist.length; i++) {
 
@@ -36,7 +36,7 @@ function getHistory() {
 		btnEl.addClass('btn btn-outline-secondary histBtn');
 		btnEl.attr('type', 'button');
 
-		contHistEl.prepend(rowEl);
+		seenHistEl.prepend(rowEl);
 		rowEl.append(btnEl);
 	} if (!city) {
 		return;
